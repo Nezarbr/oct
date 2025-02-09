@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: oct-analysis
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:server
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.7
+      - key: OPENAI_API_KEY
+        sync: false
