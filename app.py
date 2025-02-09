@@ -29,7 +29,6 @@ def encode_image_contents(contents):
 
 def analyze_with_gpt(image_base64):
     """Send the image to GPT-4 Vision and return the response."""
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     prompt = """Je suis ophtalmologue et j'ai besoin que tu analyses cette image OCT maculaire. Fournis-moi une réponse JSON structurée uniquement, sans texte explicatif avant ou après.
 
 Pour chaque œil (OD et OG), analyse les biomarqueurs suivants et retourne le résultat au format JSON :
